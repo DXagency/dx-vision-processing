@@ -2,7 +2,7 @@ import os
 
 
 def set_google_token():
-    os.environ["GOOGLE_APPLICATION_CREDENTIALS"] = '/Users/adamperez/Vision-processing-5bdd2dc98ae5.json'
+    os.environ["GOOGLE_APPLICATION_CREDENTIALS"] = os.getcwd() + '/key/Vision-processing-5bdd2dc98ae5.json'
 
 
 """ Declarations """

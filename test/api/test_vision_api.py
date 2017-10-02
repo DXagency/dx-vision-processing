@@ -21,6 +21,7 @@ def test_parse_image_using_vision_api(g_token):
     # url = 'https://storage.googleapis.com/dx-vision-image-bucket/black_ice.jpg'   # black ice air freshener
     # url = 'https://storage.googleapis.com/dx-vision-image-bucket/scuplt_mouse.jpg'
     url = 'https://storage.googleapis.com/dx-vision-image-bucket/oreos_6.jpg'
+    # url = 'https://storage.googleapis.com/dx-vision-image-bucket/heat_patches.jpg'
 
     resp = process_image_using_vision_api(url)
     notes = resp.web_detection

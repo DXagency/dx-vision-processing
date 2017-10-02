@@ -8,7 +8,7 @@ def main():
     set_google_token()
 
     # get initial api poll using img
-    img_url = 'https://storage.googleapis.com/dx-vision-image-bucket/welchs_fruit_rolls.jpg'
+    img_url = ''
     print('searching for the best match for the image in url: {}'.format(img_url))
 
     resp = process_image_using_vision_api(img_url)
@@ -21,7 +21,7 @@ def main():
     if notes.pages_with_matching_images:
         print('\n{} Pages with matching images retrieved'.format(len(notes.pages_with_matching_images)))
         for page in notes.pages_with_matching_images:
-            print('+ {}'.format(page.url))
+            print('= {}'.format(page.url))
         return
 
     if notes.full_matching_images:
@@ -33,7 +33,7 @@ def main():
     if notes.partial_matching_images:
         print('\n{} Partial Matches found: '.format(len(notes.partial_matching_images)))
         for image in notes.partial_matching_images:
-            print('+ {}'.format(image.url))
+            print('- {}'.format(image.url))
         return
 
     if notes.web_entities:
@@ -43,11 +43,11 @@ def main():
     print('no exact matches found, searching google for potential matches ...')
 
     # no exact matches, search google using first three keywords
-    urls_from_search = search_google_using_queries(' '.join(search_flags[:3]))
+    urls_from_search = search_google_using_queries(' '.join(search_flags[:4]))
 
     print('perhaps one of these URLs is what you were looking for?')
     for url in urls_from_search:
-        print(url)
+        print('* {}'.format(url))
 
 
 if __name__ == '__main__':
