@@ -1,4 +1,4 @@
-from lib.gsearch import search
+from lib.gsearch import search, search_images
 
 
 def search_google_using_queries(list_of_queries, limit=5):
@@ -8,7 +8,4 @@ def search_google_using_queries(list_of_queries, limit=5):
     :param limit:
     :return:
     """
-    search_urls = list(search(list_of_queries, stop=limit))
-    # for url in search_urls:
-    #     print(url)
-    return search_urls
+    return list(search(list_of_queries, stop=limit, only_standard=True))
